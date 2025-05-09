@@ -6,16 +6,6 @@ const apiClient = axios.create({
   httpsAgent: false,
 });
 
-export const getPublications = async () => {
-  try {
-    return await apiClient.get("publication/");
-  } catch (e) {
-    return {
-      error: true,
-      e: e,
-    };
-  }
-};
 
 export const getComents = async () => {
   try {
@@ -41,7 +31,7 @@ export const createComment = async (data) => {
 
 export const getPublicationById = async (id) => {
   try {
-    return await apiClient.get(`publication/getPublication/${id}`);
+    return await apiClient.get(`publication/${id}`);
   } catch (e) {
     return {
       error: true,
@@ -50,9 +40,9 @@ export const getPublicationById = async (id) => {
   }
 };
 
-export const getCouses = async (id) => {
+export const getCourses = async () => {
   try {
-    return await apiClient.get(`course/${id}`);
+    return await apiClient.get(`course/`);
   } catch (e) {
     return {
       error: true,
@@ -64,6 +54,17 @@ export const getCouses = async (id) => {
 export const getPublicationsByCourse = async (courseId) => {
   try {
     return await apiClient.get(`publication/byCourse/${courseId}`);
+  } catch (e) {
+    return {
+      error: true,
+      e,
+    };
+  }
+};
+
+export const getCommentsByPublication = async (publicationId) => {
+  try {
+    return await apiClient.get(`comment/${publicationId}`);
   } catch (e) {
     return {
       error: true,

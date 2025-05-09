@@ -1,2 +1,3 @@
-export * from "./validateUsername.js";
+export * from './validateUsername.jsx'
+export * from './validateContent.jsx'
 
