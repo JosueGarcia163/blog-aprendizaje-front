@@ -9,6 +9,7 @@ export const Publications = ({ publications }) => {
     navigate(`/publication/${id}`);
   };
 
+  //verifico la fecha de las publicaciones para ordenarlas de forma descendente osea la mas reciente primero.
   const sortedPublications = [...publications].sort(
     (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
   );
@@ -18,12 +19,12 @@ export const Publications = ({ publications }) => {
       {sortedPublications.map((pub) => (
         <div
           key={pub._id}
-          className="bg-white shadow-lg rounded-2xl p-6 hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
+          className="bg-gray-100/80 backdrop-blur-md border border-gray-200 shadow-md rounded-2xl p-6 hover:shadow-xl transition-all duration-300 cursor-pointer"
           onClick={() => handleNavigate(pub._id)}
         >
-          <h3 className="text-xl font-bold text-gray-800 mb-2">{pub.title}</h3>
-          <p className="text-gray-600">{pub.description}</p>
-          <p className="text-sm text-gray-400 mt-4 text-right">
+          <h3 className="text-2xl font-semibold text-blue-800 mb-3">{pub.title}</h3>
+          <p className="text-gray-700 mb-4">{pub.description}</p>
+          <p className="text-sm text-gray-500 mt-auto text-right">
             {new Date(pub.createdAt).toLocaleDateString()}
           </p>
         </div>

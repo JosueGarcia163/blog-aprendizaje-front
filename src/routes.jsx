@@ -4,6 +4,7 @@ import { CoursePublicationsPage } from "./pages/publications/CoursePublicationsP
 import { PublicationDetailsPage } from "./pages/publications/PublicationDetailsPage.jsx";
 import { CommentsPage } from "./pages/comments/CommentsPage.jsx";
 import { CommentPost } from "./components/comments/ComentPost.jsx";
+import { AboutUsPage } from "./pages/home/AboutUsPage.jsx";
 
 export const routes = [
     {
@@ -26,6 +27,11 @@ export const routes = [
     {
         path: "/publication/:id/comment/post",
         element: <CommentPost />,
+    },
+
+     {
+        path: "/about",
+        element: <AboutUsPage />,
     },
 
     {

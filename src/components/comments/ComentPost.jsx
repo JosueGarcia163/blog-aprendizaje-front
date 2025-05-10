@@ -28,6 +28,7 @@ export const CommentPost = () => {
     setFormState((prev) => ({ ...prev, [field]: value }));
   };
 
+  //actualizamos el estado del formulario si el usuario cambia el valor de los inputs
   const handleBlur = (field) => {
     const isValid =
       field === "username"
@@ -60,48 +61,47 @@ export const CommentPost = () => {
   const isSubmitDisabled =
     isLoading || errors.username || errors.content || !formState.username || !formState.content;
 
-return (
-  <div className="min-h-screen bg-gray-100"
-  style={{ backgroundImage: "url('https://abhinbound.com/hubfs/blog.jpg')" }}
-  >
-    <Navbar />
-    <div className="flex justify-center pt-10">
-      <div className="max-w-md w-full p-6 bg-white shadow-lg rounded-2xl">
-        <h2 className="text-2xl font-semibold text-center text-blue-600 mb-6">
-          Agregar Comentario
-        </h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <Input
-            field="username"
-            label="Tu nombre"
-            value={formState.username}
-            onChangeHandler={(val) => handleChange("username", val)}
-            onBlurHandler={() => handleBlur("username")}
-            type="text"
-            showErrorMessage={errors.username}
-            validationMessage={validateUsernameMessage}
-          />
-          <Input
-            field="content"
-            label="Comentario"
-            value={formState.content}
-            onChangeHandler={(val) => handleChange("content", val)}
-            onBlurHandler={() => handleBlur("content")}
-            type="text"
-            showErrorMessage={errors.content}
-            validationMessage={validateContentMessage}
-          />
-          <button
-            type="submit"
-            disabled={isSubmitDisabled}
-            className="w-full py-2 px-4 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
-          >
-            Enviar Comentario
-          </button>
-        </form>
+  return (
+    <div className="min-h-screen bg-gray-100"
+      style={{ backgroundImage: "url('https://abhinbound.com/hubfs/blog.jpg')" }}
+    >
+      <Navbar />
+      <div className="flex justify-center pt-10">
+        <div className="max-w-md w-full p-6 bg-white shadow-lg rounded-2xl">
+          <h2 className="text-2xl font-semibold text-center text-blue-600 mb-6">
+            Agregar Comentario
+          </h2>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <Input
+              field="username"
+              label="Tu nombre"
+              value={formState.username}
+              onChangeHandler={(val) => handleChange("username", val)}
+              onBlurHandler={() => handleBlur("username")}
+              type="text"
+              showErrorMessage={errors.username}
+              validationMessage={validateUsernameMessage}
+            />
+            <Input
+              field="content"
+              label="Comentario"
+              value={formState.content}
+              onChangeHandler={(val) => handleChange("content", val)}
+              onBlurHandler={() => handleBlur("content")}
+              type="text"
+              showErrorMessage={errors.content}
+              validationMessage={validateContentMessage}
+            />
+            <button
+              type="submit"
+              disabled={isSubmitDisabled}
+              className="w-full py-2 px-4 bg-blue-600 text-white font-medium rounded-xl hover:bg-blue-700 transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+            >
+              Enviar Comentario
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-);
-
+  );
 };
