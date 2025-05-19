@@ -1,6 +1,5 @@
 import React from "react";
 import { Navbar } from "../../components/NavBar";
-import YoImage from "../../../public/yo.jpg";
 
 export const AboutUsPage = () => {
   return (
@@ -10,7 +9,7 @@ export const AboutUsPage = () => {
         <h1 className="text-4xl font-bold text-blue-700 mb-4 drop-shadow-sm">Sobre mí</h1>
 
         <img
-          src={YoImage}
+          src={"/yo.jpg"}
           alt="Josue Garcia"
           className="w-32 h-32 rounded-full object-cover mb-4 border-4 border-blue-300 shadow-md"
         />
