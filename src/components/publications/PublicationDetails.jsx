@@ -9,6 +9,15 @@ export const PublicationDetails = ({ publication }) => {
 
   return (
     <div className="bg-gray-200/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 max-w-4xl mx-auto mt-12 transition-all">
+      {publication.profilePicture && (
+        <img
+          src={`http://localhost:3001/uploads/profile-pictures/${publication.profilePicture}`}
+          alt={`Imagen de ${publication.title}`}
+          className="w-full h-80 object-cover object-top rounded-xl mb-6"
+          crossOrigin="anonymous"
+        />
+      )}
+
       <h1 className="text-3xl font-bold text-gray-800 mb-4">{publication.title}</h1>
       <p className="text-gray-700 text-lg mb-6">{publication.description}</p>
 
@@ -40,9 +49,11 @@ export const PublicationDetails = ({ publication }) => {
 
 PublicationDetails.propTypes = {
   publication: PropTypes.shape({
+    _id: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
     createdAt: PropTypes.string,
+    profilePicture: PropTypes.string,
     course: PropTypes.shape({
       name: PropTypes.string,
       description: PropTypes.string,
@@ -54,5 +65,6 @@ PublicationDetails.propTypes = {
     ),
   }),
 };
+
 
 
