@@ -24,10 +24,15 @@ export const Publications = ({ publications }) => {
           onClick={() => handleNavigate(pub._id)}
         >
           {pub.profilePicture && (
+            /*La configuracion crossOrigin="anonymous" fue necesaria para evitar que el navegador bloqueara las imagenes.
+            le decimos al navegador que la imagen es de un origen diferente y que no la bloquee, esto pasa ya que el backend 
+            utiliza otro puerto distinto.
+            */
             <img
-              src={`/uploads/profile-pictures/Screenshot_2025-04-28_161558-1747695212305.png`}
+              src={`http://localhost:3001/uploads/profile-pictures/${pub.profilePicture}`}
               alt={`Imagen de ${pub.title}`}
               className="w-full h-48 object-cover rounded-xl mb-4"
+              crossOrigin="anonymous"
             />
           )}
           <h3 className="text-2xl font-semibold text-blue-800 mb-3">{pub.title}</h3>
