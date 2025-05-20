@@ -24,7 +24,7 @@ export const Navbar = () => {
       <div className="md:hidden">
         <Menu className="text-gray-700" />
       </div>
-      <p className="text-red-500 font-bold">Bienvenido a mi Blog</p>
+      <p className="text-red-500 font-bold">Josue David Garcia Mendez - 2023324 My blog de Aprendizaje</p>
 
     </nav>
   );

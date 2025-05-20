@@ -9,6 +9,15 @@ export const PublicationDetails = ({ publication }) => {
 
   return (
     <div className="bg-gray-200/80 backdrop-blur-md rounded-2xl shadow-2xl p-8 max-w-4xl mx-auto mt-12 transition-all">
+
+      <button
+        onClick={() =>
+          navigate(`/course/${publication.course?._id}/publications`)
+        }
+        className="mb-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300"
+      >
+        ⬅️ Regresar
+      </button>
       {publication.profilePicture && (
         <img
           src={`http://localhost:3001/uploads/profile-pictures/${publication.profilePicture}`}

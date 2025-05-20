@@ -12,6 +12,7 @@ import { Navbar } from "../../components/NavBar";
 
 export const CommentPost = () => {
   const { id: publicationId } = useParams();
+  const navigate = useNavigate();
   const { createCommentData, isLoading } = usePostComment();
 
   const [formState, setFormState] = useState({
@@ -65,6 +66,7 @@ export const CommentPost = () => {
     <div className="min-h-screen bg-gray-100"
       style={{ backgroundImage: "url('https://abhinbound.com/hubfs/blog.jpg')" }}
     >
+
       <Navbar />
       <div className="flex justify-center pt-10">
         <div className="max-w-md w-full p-6 bg-white shadow-lg rounded-2xl">
@@ -99,6 +101,14 @@ export const CommentPost = () => {
             >
               Enviar Comentario
             </button>
+            <button
+              type="button"
+              onClick={() => navigate(`/publication/${publicationId}`)}
+              className="w-full py-2 px-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-semibold rounded-full shadow-lg hover:scale-105 transition-all duration-300"
+            >
+              ⬅️ Regresar
+            </button>
+
           </form>
         </div>
       </div>
