@@ -17,14 +17,18 @@ export const Courses = ({ courses }) => {
           className="min-h-[150px] bg-amber-100/90 shadow-2xl rounded-2xl p-10 cursor-pointer hover:scale-105 transform transition-all duration-300"
           onClick={() => handleCourseClick(course._id)}
         >
+          
           <img
-            src={course.image}
+            src={`/${course.image}`}
             alt={`Imagen de ${course.name}`}
             className="w-full h-40 object-cover rounded-xl mb-4"
           />
           <h2 className="text-2xl font-semibold text-center text-gray-800">
             {course.name}
           </h2>
+          <p className="text-sm text-gray-700 text-center">
+            {course.description}
+          </p>
         </div>
       ))}
     </div>

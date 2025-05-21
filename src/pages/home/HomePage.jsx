@@ -17,7 +17,7 @@ export const HomePage = () => {
       <Navbar />
       <div className="flex flex-col items-center justify-center pt-32 px-4">
         <h1 className="text-4xl font-bold text-yellow-500 mb-12 text-center drop-shadow-lg">
-          Selecciona el curso para ver sus publicaciones
+          Publicaciones:
         </h1>
 
         {isFetching ? (
