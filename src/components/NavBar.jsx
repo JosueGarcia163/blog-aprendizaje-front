@@ -24,8 +24,8 @@ export const Navbar = () => {
       <div className="md:hidden">
         <Menu className="text-gray-700" />
       </div>
-      <p style={{ color: '#3EB489' }} className="font-bold">
-        Josue David Garcia Mendez - 2023324 My blog de Aprendizaje
+      <p className="text-2xl font-extrabold text-emerald-500 tracking-wide drop-shadow-sm italic">
+        Josue David Garcia Mendez - 2023324 · My Blog de Aprendizaje
       </p>
     </nav>
   );
