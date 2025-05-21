@@ -8,7 +8,7 @@ export const Courses = ({ courses }) => {
   const handleCourseClick = (id) => {
     navigate(`/course/${id}/publications`);
   };
-
+  
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-5xl">
       {courses.map((course) => (
@@ -17,7 +17,7 @@ export const Courses = ({ courses }) => {
           className="min-h-[150px] bg-amber-100/90 shadow-2xl rounded-2xl p-10 cursor-pointer hover:scale-105 transform transition-all duration-300"
           onClick={() => handleCourseClick(course._id)}
         >
-          
+
           <img
             src={`/${course.image}`}
             alt={`Imagen de ${course.name}`}
